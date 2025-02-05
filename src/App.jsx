@@ -7,17 +7,21 @@ function App() {
   const[currTask,setCurrTask] = useState('')
 
   function addNewTask(taskText){
+    
+    //Create new Object
 
     let newTaskToAdd = {
       id: tasks.length + 1,
       text: taskText
     }
-
+    
+    //Set new tasks to be spread of current tasks and new task
     setTasks([...tasks, newTaskToAdd])
 
   }
 
   function deleteTask(taskId){
+    //Delete task with id passed in
     let newTasks = tasks.filter(task => task.id !== taskId)
     setTasks(newTasks)
   }
